@@ -12,10 +12,7 @@ const Download = () => {
             AppStore or Google Play.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-6">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.aiassistant.biz"
-              target="blank"
-            >
+            <a href={process.env.REACT_APP_PlayStoreUrl} target="blank">
               <button className="">
                 <img
                   className="h-10"
@@ -24,10 +21,7 @@ const Download = () => {
                 />
               </button>
             </a>
-            <a
-              href="https://apps.apple.com/us/app/biz-ai-business-ai-assistant/id6449032075"
-              target="blank"
-            >
+            <a href={process.env.REACT_APP_AppStoreUrl} target="blank">
               <button className="">
                 <img
                   className="h-10"
@@ -36,10 +30,7 @@ const Download = () => {
                 />
               </button>
             </a>
-            <a
-              href="https://drive.google.com/file/d/1nDjaxm2htVNGSsY_wE9ZQhUnQnnnQ6Nc/view?usp=sharing"
-              target="blank"
-            >
+            <a href={process.env.REACT_APP_ApkUrl} target="blank">
               <button className="">
                 <img
                   className="h-10"

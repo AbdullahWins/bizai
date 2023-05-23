@@ -6,6 +6,9 @@ import AdBanner from "../components/Ads/AdBanner";
 import Download from "../components/Download/Download";
 
 const Home = () => {
+  // changing the webpage title dynamically
+  document.title = `${process.env.REACT_APP_ApplicationName} | Home`;
+
   const { resetOutput } = useContext(AiContext);
 
   return (

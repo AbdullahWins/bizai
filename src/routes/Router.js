@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
+import AuthLayout from "../layouts/AuthLayout";
 import ITSupport from "../components/Modules/ITSupport";
 import BlogPost from "../components/Modules/BlogPost";
 import ColdEmail from "../components/Modules/ColdEmail";
@@ -14,20 +15,51 @@ import CareerConsultant from "../components/Modules/CareerConsultant";
 import ProblemAgitateSolution from "../components/Modules/ProblemAgitateSolution";
 import AIDA from "../components/Modules/AIDA";
 import About from "../pages/About";
+import Login from "../pages/Authentication/Login";
+import Register from "../pages/Authentication/Register";
+import PrivateRoute from "./PrivateRoute";
+import Pricing from "../pages/Pricing/Pricing";
 
 export const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+
     children: [
       {
         path: "/",
         element: <Home></Home>,
       },
       {
+        path: "/home",
+        element: <Home></Home>,
+      },
+      {
+        path: "/pricing",
+        element: <Pricing></Pricing>,
+      },
+      {
         path: "/about",
         element: <About></About>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: (
+      <PrivateRoute>
+        <AuthLayout></AuthLayout>
+      </PrivateRoute>
+    ),
+    children: [
       {
         path: "/blog",
         element: <BlogPost></BlogPost>,

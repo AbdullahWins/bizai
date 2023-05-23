@@ -8,21 +8,24 @@ const Footer = () => {
       <section className="hidden max-w-6xl w-full mx-auto my-0 md:block footer footer-center px-4 py-12 text-base-content">
         <div className="flex items-center justify-between">
           <p className="text-base">
-            Copyright © 2023 <span className="text-infoColor">Biz AI</span> -
-            All right are reserved
+            Copyright © 2023{" "}
+            <span className="text-infoColor">
+              {process.env.REACT_APP_ApplicationName}
+            </span>{" "}
+            - All right are reserved
           </p>
           <div className="flex items-center gap-4">
-            <Link to="https://web.facebook.com/netrocreative">
-              <i class="fa-brands fa-facebook text-3xl"></i>
+            <Link to={`${process.env.REACT_APP_CompanyFacebookUrl}`}>
+              <i className="fa-brands fa-facebook text-3xl"></i>
             </Link>
-            <Link to="https://twitter.com/netrocreative">
-              <i class="fa-brands fa-twitter text-3xl"></i>
+            <Link to={`${process.env.REACT_APP_CompanyTwitterUrl}`}>
+              <i className="fa-brands fa-twitter text-3xl"></i>
             </Link>
-            <Link to="https://www.linkedin.com/company/netrocreative/">
-              <i class="fa-brands fa-linkedin text-3xl"></i>
+            <Link to={`${process.env.REACT_APP_CompanyLinkedinUrl}`}>
+              <i className="fa-brands fa-linkedin text-3xl"></i>
             </Link>
-            <Link to="https://wa.me/+8801724244796">
-              <i class="fa-brands fa-whatsapp text-3xl"></i>
+            <Link to={`${process.env.REACT_APP_CompanyWhatsAppUrl}`}>
+              <i className="fa-brands fa-whatsapp text-3xl"></i>
             </Link>
           </div>
         </div>
