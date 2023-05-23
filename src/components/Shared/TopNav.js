@@ -16,7 +16,17 @@ const TopNav = () => {
     <section className="max-w-6xl w-full mx-auto my-0 px-4 md:py-9">
       <div className="hidden md:flex md:items-center md:justify-between">
         <div>
-          <img className="h-8" src={logo} alt="" />
+          <Link to="/">
+            <button
+              onClick={() => {
+                setActivePage(
+                  `${process.env.REACT_APP_ApplicationName} | Home`
+                );
+              }}
+            >
+              <img className="h-8" src={logo} alt="" />
+            </button>
+          </Link>
         </div>
         <div className="flex gap-8 py-2">
           <Link to="/">
