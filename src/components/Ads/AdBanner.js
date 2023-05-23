@@ -22,7 +22,7 @@ function AdBanner() {
 
   return (
     <div>
-      {!user && !subscriptionStatus ? (
+      {!user && !subscriptionStatus ?  (
         <div
           className="hidden sm:block"
           id="googleAd"
