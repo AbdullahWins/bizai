@@ -12,8 +12,6 @@ const TopNav = () => {
     setActivePage(document.title);
   }, []);
 
-  console.log(activePage);
-
   return (
     <section className="max-w-6xl w-full mx-auto my-0 px-4 md:py-9">
       <div className="hidden md:flex md:items-center md:justify-between">

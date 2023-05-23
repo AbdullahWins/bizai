@@ -11,7 +11,6 @@ const Pricing = () => {
 
   let navigate = useNavigate();
   const { user, subscriptionStatus, loading } = useContext(AuthContext);
-  console.log(subscriptionStatus);
 
   const handleSubscribe = async (productId) => {
     const stripe = window.Stripe(process.env.REACT_APP_stripePublicKey);

@@ -73,9 +73,10 @@ const AuthProvider = ({ children }) => {
         const data = await response.json();
         if (data?.data?.length > 0) {
           setSubscriptionStatus(true);
-        } else {
-          setSubscriptionStatus(false);
         }
+        //  else {
+        //   setSubscriptionStatus(false);
+        // }
       } catch (error) {
         console.error(error);
       }

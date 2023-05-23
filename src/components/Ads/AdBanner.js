@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function AdBanner() {
+  const { user, subscriptionStatus } = useContext(AuthContext);
+
   useEffect(() => {
     window.googletag = window.googletag || { cmd: [] };
     window.googletag.cmd.push(function () {
@@ -17,11 +21,17 @@ function AdBanner() {
   }, []);
 
   return (
-    <div
-      className="hidden sm:block"
-      id="googleAd"
-      style={{ width: "300px", height: "250px" }}
-    ></div>
+    <div>
+      {!user && !subscriptionStatus ? (
+        <div
+          className="hidden sm:block"
+          id="googleAd"
+          style={{ width: "300px", height: "250px" }}
+        ></div>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 }
 
